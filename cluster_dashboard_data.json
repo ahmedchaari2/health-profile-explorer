@@ -1,0 +1,4728 @@
+{
+  "dataset": "CDC Diabetes Health Indicators — UCI ID 891",
+  "target_name": "Diabetes_012",
+  "source_rows": 253680,
+  "source_columns": 22,
+  "sample_size": 3000,
+  "summary": {
+    "sample_size": 3000,
+    "source_rows": 253680,
+    "source_columns": 22
+  },
+  "feature_count": 21,
+  "selected_features": [
+    "HighBP",
+    "HighChol",
+    "CholCheck",
+    "BMI",
+    "Smoker",
+    "Stroke",
+    "HeartDiseaseorAttack",
+    "PhysActivity",
+    "Fruits",
+    "Veggies",
+    "HvyAlcoholConsump",
+    "AnyHealthcare",
+    "NoDocbcCost",
+    "GenHlth",
+    "MentHlth",
+    "PhysHlth",
+    "DiffWalk",
+    "Sex",
+    "Age",
+    "Education",
+    "Income"
+  ],
+  "selected_model": "K-Means",
+  "random_state": 42,
+  "metrics": {
+    "silhouette": 0.2177558634572572,
+    "calinski_harabasz": 292.91345806413096,
+    "davies_bouldin": 2.114776743654837,
+    "noise_pct": 0.0,
+    "n_clusters": 3,
+    "largest_cluster_pct": 72.5,
+    "evaluated_pct": 100.0
+  },
+  "cluster_sizes": [
+    {
+      "cluster_id": 0,
+      "label": "Cluster 0",
+      "count": 118,
+      "percentage": 3.933333333333333,
+      "is_noise": false
+    },
+    {
+      "cluster_id": 1,
+      "label": "Cluster 1",
+      "count": 707,
+      "percentage": 23.566666666666666,
+      "is_noise": false
+    },
+    {
+      "cluster_id": 2,
+      "label": "Cluster 2",
+      "count": 2175,
+      "percentage": 72.5,
+      "is_noise": false
+    }
+  ],
+  "cluster_profiles": [
+    {
+      "cluster_id": 0,
+      "label": "Cluster 0",
+      "is_noise": false,
+      "values": {
+        "HighBP": 0.1864406779661017,
+        "HighChol": 0.15254237288135594,
+        "CholCheck": 0.0,
+        "BMI": 27.6864406779661,
+        "Smoker": 0.4152542372881356,
+        "Stroke": 0.00847457627118644,
+        "HeartDiseaseorAttack": 0.025423728813559324,
+        "PhysActivity": 0.7457627118644068,
+        "Fruits": 0.5847457627118644,
+        "Veggies": 0.7966101694915254,
+        "HvyAlcoholConsump": 0.09322033898305085,
+        "AnyHealthcare": 0.8389830508474576,
+        "NoDocbcCost": 0.1864406779661017,
+        "GenHlth": 2.26271186440678,
+        "MentHlth": 3.483050847457627,
+        "PhysHlth": 2.73728813559322,
+        "DiffWalk": 0.07627118644067797,
+        "Sex": 0.4661016949152542,
+        "Age": 6.516949152542373,
+        "Education": 5.02542372881356,
+        "Income": 5.9491525423728815
+      },
+      "target_distribution_pct": {
+        "0.0": 95.76271186440678,
+        "1.0": 2.5423728813559325,
+        "2.0": 1.694915254237288
+      },
+      "diabetes_prevalence_pct": 1.694915254237288
+    },
+    {
+      "cluster_id": 1,
+      "label": "Cluster 1",
+      "is_noise": false,
+      "values": {
+        "HighBP": 0.7482319660537482,
+        "HighChol": 0.6124469589816125,
+        "CholCheck": 0.9985855728429985,
+        "BMI": 31.035360678925034,
+        "Smoker": 0.6166902404526167,
+        "Stroke": 0.13154172560113153,
+        "HeartDiseaseorAttack": 0.31117397454031115,
+        "PhysActivity": 0.48656294200848654,
+        "Fruits": 0.5091937765205092,
+        "Veggies": 0.6817538896746818,
+        "HvyAlcoholConsump": 0.03536067892503536,
+        "AnyHealthcare": 0.9519094766619519,
+        "NoDocbcCost": 0.1782178217821782,
+        "GenHlth": 3.6732673267326734,
+        "MentHlth": 7.592644978783593,
+        "PhysHlth": 12.939179632248939,
+        "DiffWalk": 0.6124469589816125,
+        "Sex": 0.4045261669024045,
+        "Age": 9.374823196605375,
+        "Education": 4.499292786421499,
+        "Income": 4.199434229137199
+      },
+      "target_distribution_pct": {
+        "0.0": 67.89250353606789,
+        "1.0": 2.828854314002829,
+        "2.0": 29.27864214992928
+      },
+      "diabetes_prevalence_pct": 29.27864214992928
+    },
+    {
+      "cluster_id": 2,
+      "label": "Cluster 2",
+      "is_noise": false,
+      "values": {
+        "HighBP": 0.33793103448275863,
+        "HighChol": 0.3816091954022989,
+        "CholCheck": 1.0,
+        "BMI": 27.63080459770115,
+        "Smoker": 0.4064367816091954,
+        "Stroke": 0.010574712643678161,
+        "HeartDiseaseorAttack": 0.03126436781609195,
+        "PhysActivity": 0.8275862068965517,
+        "Fruits": 0.68,
+        "Veggies": 0.8491954022988506,
+        "HvyAlcoholConsump": 0.06022988505747127,
+        "AnyHealthcare": 0.9567816091954023,
+        "NoDocbcCost": 0.04735632183908046,
+        "GenHlth": 2.1406896551724137,
+        "MentHlth": 1.6588505747126436,
+        "PhysHlth": 1.3319540229885058,
+        "DiffWalk": 0.022988505747126436,
+        "Sex": 0.447816091954023,
+        "Age": 7.6914942528735635,
+        "Education": 5.224827586206897,
+        "Income": 6.647816091954023
+      },
+      "target_distribution_pct": {
+        "0.0": 88.59770114942529,
+        "1.0": 1.4252873563218391,
+        "2.0": 9.977011494252872
+      },
+      "diabetes_prevalence_pct": 9.977011494252872
+    }
+  ],
+  "overall_means": {
+    "HighBP": 0.42866666666666664,
+    "HighChol": 0.427,
+    "CholCheck": 0.9603333333333334,
+    "BMI": 28.435333333333332,
+    "Smoker": 0.4563333333333333,
+    "Stroke": 0.039,
+    "HeartDiseaseorAttack": 0.097,
+    "PhysActivity": 0.744,
+    "Fruits": 0.636,
+    "Veggies": 0.8076666666666666,
+    "HvyAlcoholConsump": 0.05566666666666667,
+    "AnyHealthcare": 0.951,
+    "NoDocbcCost": 0.08366666666666667,
+    "GenHlth": 2.506666666666667,
+    "MentHlth": 3.129,
+    "PhysHlth": 4.1226666666666665,
+    "DiffWalk": 0.164,
+    "Sex": 0.43833333333333335,
+    "Age": 8.042,
+    "Education": 5.046,
+    "Income": 6.043333333333333
+  },
+  "overall_stds": {
+    "HighBP": 0.49488539638542134,
+    "HighChol": 0.494642294997102,
+    "CholCheck": 0.19517485038350155,
+    "BMI": 6.3412789106159195,
+    "Smoker": 0.49808957248894725,
+    "Stroke": 0.19359493795035035,
+    "HeartDiseaseorAttack": 0.29595776725742473,
+    "PhysActivity": 0.43642181430354743,
+    "Fruits": 0.4811486256864921,
+    "Veggies": 0.394133508119041,
+    "HvyAlcoholConsump": 0.22927688258716553,
+    "AnyHealthcare": 0.21586801523152985,
+    "NoDocbcCost": 0.27688726145410797,
+    "GenHlth": 1.0742232335765016,
+    "MentHlth": 7.42888679413006,
+    "PhysHlth": 8.677573752047413,
+    "DiffWalk": 0.37027557305336795,
+    "Sex": 0.49618265006167056,
+    "Age": 3.0138960389060094,
+    "Education": 0.9827939763755168,
+    "Income": 2.072065528779328
+  },
+  "scatter_points": [
+    {
+      "age_jitter": 7.029651128714259,
+      "bmi": 37.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 3.9876950817283,
+      "bmi": 26.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 1.9934134360008458,
+      "bmi": 22.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 7.088197751620558,
+      "bmi": 43.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 10.892798020384001,
+      "bmi": 28.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 6.0697771137350385,
+      "bmi": 26.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 12.114215409688295,
+      "bmi": 27.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 9.027146260558593,
+      "bmi": 26.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 11.905540687649133,
+      "bmi": 42.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 9.102283727105966,
+      "bmi": 31.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 10.111888630088362,
+      "bmi": 29.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 9.068861850600513,
+      "bmi": 24.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 6.029255465610059,
+      "bmi": 41.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 9.901600333850821,
+      "bmi": 23.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 8.035663229952904,
+      "bmi": 33.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 9.992419993899224,
+      "bmi": 22.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 5.1046249998645745,
+      "bmi": 30.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 5.908612206287459,
+      "bmi": 30.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 5.0496070211151745,
+      "bmi": 22.0,
+      "cluster_id": 0
+    },
+    {
+      "age_jitter": 12.112783651931954,
+      "bmi": 26.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 12.079742352334849,
+      "bmi": 33.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 9.904401256696891,
+      "bmi": 24.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 2.0963940448559453,
+      "bmi": 37.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 2.9235171501038044,
+      "bmi": 42.0,
+      "cluster_id": 0
+    },
+    {
+      "age_jitter": 4.040399377790837,
+      "bmi": 38.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 8.901225304625918,
+      "bmi": 25.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 4.060830529464722,
+      "bmi": 24.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 9.992789425668962,
+      "bmi": 36.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 13.115096963340783,
+      "bmi": 32.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 9.956895328863354,
+      "bmi": 28.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 11.974302573976855,
+      "bmi": 45.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 12.084239308812519,
+      "bmi": 22.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 12.959942598642552,
+      "bmi": 25.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 11.98351638756379,
+      "bmi": 27.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 7.892470847951625,
+      "bmi": 23.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 11.100510483416643,
+      "bmi": 24.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 12.95403030939946,
+      "bmi": 23.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 12.958806689201126,
+      "bmi": 18.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 7.067074609785119,
+      "bmi": 19.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 7.053547312514893,
+      "bmi": 32.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 12.916788235989879,
+      "bmi": 26.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 2.063599725779846,
+      "bmi": 24.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 5.0446631276253076,
+      "bmi": 30.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 9.895727304140411,
+      "bmi": 29.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 9.944340425156932,
+      "bmi": 44.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 4.060427370215388,
+      "bmi": 21.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 11.054168232973408,
+      "bmi": 31.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 2.9864194077185595,
+      "bmi": 26.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 12.903988445385883,
+      "bmi": 33.0,
+      "cluster_id": 0
+    },
+    {
+      "age_jitter": 13.099188444088474,
+      "bmi": 26.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 3.937654306275761,
+      "bmi": 23.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 3.0079799543596097,
+      "bmi": 27.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 8.9145354006123,
+      "bmi": 29.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 9.896169833231921,
+      "bmi": 35.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 4.913659781359667,
+      "bmi": 40.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 8.103498398835072,
+      "bmi": 35.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 5.919214008035869,
+      "bmi": 25.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 9.02164689186387,
+      "bmi": 23.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 5.058955517897086,
+      "bmi": 48.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 10.989982889968763,
+      "bmi": 21.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 12.03670131037536,
+      "bmi": 21.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 6.112755628009337,
+      "bmi": 25.0,
+      "cluster_id": 0
+    },
+    {
+      "age_jitter": 7.0048552160910385,
+      "bmi": 27.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 12.948332819761104,
+      "bmi": 25.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 6.881766944740241,
+      "bmi": 29.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 1.926152162968432,
+      "bmi": 21.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 13.113012334850977,
+      "bmi": 19.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 12.077331251062514,
+      "bmi": 20.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 5.97639879216225,
+      "bmi": 28.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 2.9693427775659718,
+      "bmi": 20.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 9.04271324461081,
+      "bmi": 26.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 7.939035444365749,
+      "bmi": 33.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 7.999286203092196,
+      "bmi": 45.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 5.952065258914207,
+      "bmi": 27.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 7.943808790750285,
+      "bmi": 33.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 7.007090093268418,
+      "bmi": 32.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 10.078422966374788,
+      "bmi": 37.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 10.920305115343726,
+      "bmi": 26.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 8.061096870905512,
+      "bmi": 23.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 12.905380032990763,
+      "bmi": 22.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 5.917027950099234,
+      "bmi": 28.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 4.99239692832664,
+      "bmi": 33.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 7.887160344823927,
+      "bmi": 77.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 10.102712945959798,
+      "bmi": 24.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 3.9871334781144903,
+      "bmi": 38.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 9.99363745625367,
+      "bmi": 27.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 11.916238351544417,
+      "bmi": 26.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 7.0659778968115186,
+      "bmi": 30.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 5.926326045489449,
+      "bmi": 24.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 11.902455932546113,
+      "bmi": 25.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 9.995418502792019,
+      "bmi": 22.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 11.976303591404667,
+      "bmi": 22.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 8.996907700779941,
+      "bmi": 30.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 8.998481298304956,
+      "bmi": 24.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 8.959719131448828,
+      "bmi": 27.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 5.914325250039992,
+      "bmi": 20.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 7.999175575315325,
+      "bmi": 27.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 3.0499642768221884,
+      "bmi": 29.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 10.919505876219684,
+      "bmi": 28.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 10.893250389609916,
+      "bmi": 25.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 10.015789652649781,
+      "bmi": 35.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 8.073143445799232,
+      "bmi": 28.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 11.962390190970938,
+      "bmi": 24.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 8.943503425283078,
+      "bmi": 27.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 5.0205851180371335,
+      "bmi": 29.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 9.06791043120626,
+      "bmi": 27.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 11.89800415376437,
+      "bmi": 31.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 4.9285771023501725,
+      "bmi": 24.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 5.971445094263156,
+      "bmi": 23.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 2.9034691193869064,
+      "bmi": 30.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 7.894569724304459,
+      "bmi": 33.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 3.9554681660186084,
+      "bmi": 39.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 1.0162747324850423,
+      "bmi": 34.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 9.890163067359689,
+      "bmi": 32.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 13.011794652063923,
+      "bmi": 27.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 9.11779434373227,
+      "bmi": 40.0,
+      "cluster_id": 0
+    },
+    {
+      "age_jitter": 7.065749451653431,
+      "bmi": 21.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 12.9679341879583,
+      "bmi": 25.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 10.975406005893198,
+      "bmi": 28.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 8.989174656415834,
+      "bmi": 23.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 12.948031732058405,
+      "bmi": 24.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 5.015040323319664,
+      "bmi": 24.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 6.934780690111221,
+      "bmi": 30.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 8.019257652018306,
+      "bmi": 22.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 3.015940956194315,
+      "bmi": 25.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 8.964463186325512,
+      "bmi": 38.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 2.041806846186756,
+      "bmi": 23.0,
+      "cluster_id": 0
+    },
+    {
+      "age_jitter": 9.019437449699533,
+      "bmi": 47.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 6.88222234763707,
+      "bmi": 26.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 7.084463957870752,
+      "bmi": 27.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 2.0245086540400226,
+      "bmi": 26.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 5.113860109546123,
+      "bmi": 21.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 9.079139978429978,
+      "bmi": 23.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 9.013028540574343,
+      "bmi": 28.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 7.056431062604712,
+      "bmi": 25.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 10.909981683033354,
+      "bmi": 27.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 4.023851869965003,
+      "bmi": 31.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 11.930825319231914,
+      "bmi": 23.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 9.956917878802724,
+      "bmi": 33.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 7.054691414079645,
+      "bmi": 26.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 12.078981020000617,
+      "bmi": 25.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 12.999673491250316,
+      "bmi": 28.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 11.899266556896968,
+      "bmi": 25.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 4.912453126880957,
+      "bmi": 28.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 4.940793824169354,
+      "bmi": 35.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 12.89016413237924,
+      "bmi": 28.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 12.091058816037044,
+      "bmi": 34.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 7.953315346969081,
+      "bmi": 21.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 0.9135490217127683,
+      "bmi": 26.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 8.893294898199422,
+      "bmi": 21.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 3.887715781072684,
+      "bmi": 50.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 3.040039988565708,
+      "bmi": 32.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 10.007652661923057,
+      "bmi": 37.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 7.0944983508919055,
+      "bmi": 23.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 9.991836436715495,
+      "bmi": 28.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 4.9445913201734735,
+      "bmi": 27.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 9.065282983706638,
+      "bmi": 22.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 3.966535626586204,
+      "bmi": 27.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 11.080430189859376,
+      "bmi": 27.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 12.006022376002766,
+      "bmi": 30.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 8.902513877761853,
+      "bmi": 27.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 13.118445405555002,
+      "bmi": 33.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 10.024745717761293,
+      "bmi": 29.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 0.9358845483864895,
+      "bmi": 23.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 12.093134086803568,
+      "bmi": 25.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 11.990814527324282,
+      "bmi": 28.0,
+      "cluster_id": 0
+    },
+    {
+      "age_jitter": 3.952948023535027,
+      "bmi": 37.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 3.0775362279764193,
+      "bmi": 26.0,
+      "cluster_id": 0
+    },
+    {
+      "age_jitter": 4.929046290850794,
+      "bmi": 37.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 3.973082006839276,
+      "bmi": 23.0,
+      "cluster_id": 0
+    },
+    {
+      "age_jitter": 9.939891562225293,
+      "bmi": 24.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 5.992417276707761,
+      "bmi": 16.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 7.96901895717,
+      "bmi": 33.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 8.916108962773794,
+      "bmi": 23.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 8.080972034793302,
+      "bmi": 24.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 5.0783867563179035,
+      "bmi": 22.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 10.941091835510548,
+      "bmi": 40.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 9.045336348588714,
+      "bmi": 25.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 7.930173838064538,
+      "bmi": 29.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 10.058558733446798,
+      "bmi": 31.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 6.9523222318035325,
+      "bmi": 22.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 5.0762804743899395,
+      "bmi": 26.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 10.056031946271961,
+      "bmi": 29.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 12.95625336035423,
+      "bmi": 18.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 8.889987401726854,
+      "bmi": 23.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 5.09400254390118,
+      "bmi": 34.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 7.909461903778757,
+      "bmi": 35.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 7.983476229713868,
+      "bmi": 23.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 7.9870574943008545,
+      "bmi": 30.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 9.09915690008333,
+      "bmi": 23.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 1.9068968890396873,
+      "bmi": 25.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 4.980632237102674,
+      "bmi": 24.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 10.05514738409051,
+      "bmi": 20.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 4.032310988180383,
+      "bmi": 30.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 0.9679205172535688,
+      "bmi": 18.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 3.0401752531437114,
+      "bmi": 22.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 4.960073061998777,
+      "bmi": 26.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 9.030278228601713,
+      "bmi": 22.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 3.0935175412020954,
+      "bmi": 24.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 8.075976503221739,
+      "bmi": 31.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 8.094682759452507,
+      "bmi": 36.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 8.961536627459767,
+      "bmi": 29.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 7.019467986213017,
+      "bmi": 33.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 11.002674503223187,
+      "bmi": 30.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 10.101990993449666,
+      "bmi": 35.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 6.028491546760714,
+      "bmi": 45.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 8.888203058622782,
+      "bmi": 31.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 10.071813501198173,
+      "bmi": 28.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 10.893946035613148,
+      "bmi": 25.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 7.05233496079222,
+      "bmi": 29.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 4.931319397106719,
+      "bmi": 20.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 5.069070284153329,
+      "bmi": 35.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 11.107674919691034,
+      "bmi": 27.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 10.926306016758435,
+      "bmi": 32.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 8.054043997004209,
+      "bmi": 28.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 5.039435249678573,
+      "bmi": 42.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 4.958198085953156,
+      "bmi": 24.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 2.886959880769073,
+      "bmi": 28.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 8.041940085531254,
+      "bmi": 27.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 11.995770241110987,
+      "bmi": 34.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 11.991781785685742,
+      "bmi": 28.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 7.883793333305632,
+      "bmi": 25.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 7.0248218690399975,
+      "bmi": 24.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 9.077251372985247,
+      "bmi": 22.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 9.08211711732405,
+      "bmi": 29.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 4.990054554190038,
+      "bmi": 32.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 6.899855199981385,
+      "bmi": 29.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 7.961363805817583,
+      "bmi": 25.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 4.952595267473103,
+      "bmi": 34.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 9.918705226968065,
+      "bmi": 27.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 2.916864439809062,
+      "bmi": 21.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 8.110927997248329,
+      "bmi": 21.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 2.0472139868658927,
+      "bmi": 24.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 8.936798967119419,
+      "bmi": 30.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 12.067681240977162,
+      "bmi": 26.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 3.884743946882246,
+      "bmi": 22.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 8.967986012383827,
+      "bmi": 25.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 7.059929380250713,
+      "bmi": 27.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 2.9615320929988984,
+      "bmi": 30.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 7.090807776114592,
+      "bmi": 26.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 8.053596879432117,
+      "bmi": 29.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 6.00868809914673,
+      "bmi": 22.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 9.885239533994994,
+      "bmi": 21.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 7.957004017776125,
+      "bmi": 32.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 11.997769678645085,
+      "bmi": 34.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 10.926329957808537,
+      "bmi": 30.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 5.001002865053795,
+      "bmi": 19.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 5.993791842021641,
+      "bmi": 21.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 10.02442594140825,
+      "bmi": 29.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 6.024946719594871,
+      "bmi": 32.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 11.114769063383495,
+      "bmi": 25.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 11.973383210765299,
+      "bmi": 26.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 9.89077854865416,
+      "bmi": 30.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 11.020630729783052,
+      "bmi": 26.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 10.04530053106238,
+      "bmi": 37.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 12.935812723648882,
+      "bmi": 20.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 8.916859146980668,
+      "bmi": 30.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 3.08487616056108,
+      "bmi": 25.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 9.998704053753869,
+      "bmi": 27.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 4.085646494059977,
+      "bmi": 31.0,
+      "cluster_id": 0
+    },
+    {
+      "age_jitter": 10.103200803365132,
+      "bmi": 24.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 7.9533920548972565,
+      "bmi": 24.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 10.1181701353734,
+      "bmi": 27.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 9.031728600027567,
+      "bmi": 28.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 10.11563342741021,
+      "bmi": 26.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 7.9076446527954225,
+      "bmi": 27.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 11.033411038384761,
+      "bmi": 39.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 6.896827463690604,
+      "bmi": 33.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 9.044843895783952,
+      "bmi": 22.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 8.978834615180537,
+      "bmi": 25.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 8.083754821429965,
+      "bmi": 23.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 7.928605377901805,
+      "bmi": 31.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 9.053623528410549,
+      "bmi": 36.0,
+      "cluster_id": 0
+    },
+    {
+      "age_jitter": 11.033813272300678,
+      "bmi": 25.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 5.081401727896238,
+      "bmi": 33.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 4.907769000154263,
+      "bmi": 34.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 6.021155123547377,
+      "bmi": 28.0,
+      "cluster_id": 0
+    },
+    {
+      "age_jitter": 5.922325531201938,
+      "bmi": 25.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 8.92307809736306,
+      "bmi": 25.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 10.93525135781477,
+      "bmi": 27.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 7.985317208432468,
+      "bmi": 40.0,
+      "cluster_id": 0
+    },
+    {
+      "age_jitter": 5.995687382300724,
+      "bmi": 26.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 6.993800495075829,
+      "bmi": 20.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 9.902577271141455,
+      "bmi": 23.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 10.118408439618683,
+      "bmi": 40.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 9.025575920446903,
+      "bmi": 32.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 7.058742917417876,
+      "bmi": 20.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 1.9151712383624337,
+      "bmi": 33.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 8.892397900083456,
+      "bmi": 28.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 6.082078370649471,
+      "bmi": 25.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 12.041796736150552,
+      "bmi": 29.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 5.0071100578302765,
+      "bmi": 19.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 7.894357840956152,
+      "bmi": 24.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 6.962713812762789,
+      "bmi": 26.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 11.985402843169425,
+      "bmi": 24.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 9.93081786466627,
+      "bmi": 33.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 9.95641578827883,
+      "bmi": 22.0,
+      "cluster_id": 0
+    },
+    {
+      "age_jitter": 1.991456390316126,
+      "bmi": 22.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 6.882975331339791,
+      "bmi": 34.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 9.067510568503565,
+      "bmi": 23.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 6.081115252477292,
+      "bmi": 36.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 6.0909765071181505,
+      "bmi": 23.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 8.936145476607681,
+      "bmi": 29.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 9.067730686864271,
+      "bmi": 32.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 6.034272903440059,
+      "bmi": 21.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 7.9975279380360575,
+      "bmi": 34.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 1.0037813623091323,
+      "bmi": 23.0,
+      "cluster_id": 0
+    },
+    {
+      "age_jitter": 7.088121346385609,
+      "bmi": 38.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 9.899476960101737,
+      "bmi": 26.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 11.08365451730567,
+      "bmi": 33.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 6.04675155091644,
+      "bmi": 20.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 6.908201051740624,
+      "bmi": 46.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 8.976325333812813,
+      "bmi": 27.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 3.9127529329706827,
+      "bmi": 31.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 8.049206767165806,
+      "bmi": 28.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 12.982024631678154,
+      "bmi": 26.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 6.1176771994383055,
+      "bmi": 27.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 9.939507277998612,
+      "bmi": 30.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 9.999806614101333,
+      "bmi": 27.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 12.974856316902134,
+      "bmi": 30.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 8.968297041653237,
+      "bmi": 26.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 11.967690831167792,
+      "bmi": 24.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 7.889355050608957,
+      "bmi": 26.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 10.022443742186127,
+      "bmi": 25.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 12.88842803466632,
+      "bmi": 28.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 10.101603272254195,
+      "bmi": 33.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 9.906194559223776,
+      "bmi": 27.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 5.970869022584284,
+      "bmi": 23.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 11.09651592041816,
+      "bmi": 35.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 13.113296842511412,
+      "bmi": 30.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 7.100517566447364,
+      "bmi": 38.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 6.0366448163686215,
+      "bmi": 31.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 8.959362479267124,
+      "bmi": 27.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 8.913119404163497,
+      "bmi": 40.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 4.07140260056338,
+      "bmi": 19.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 9.895410124375712,
+      "bmi": 27.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 7.019305191328683,
+      "bmi": 32.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 4.97041616188997,
+      "bmi": 24.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 6.921888911590429,
+      "bmi": 35.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 6.902628652837121,
+      "bmi": 22.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 6.031508620153461,
+      "bmi": 27.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 6.022483681071925,
+      "bmi": 35.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 8.065840616283932,
+      "bmi": 26.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 3.0366161404240994,
+      "bmi": 27.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 6.997647410176381,
+      "bmi": 26.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 12.001966299546778,
+      "bmi": 27.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 10.07495126715287,
+      "bmi": 26.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 7.881755469510324,
+      "bmi": 28.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 3.999503644669333,
+      "bmi": 21.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 3.0360300037341115,
+      "bmi": 31.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 6.041936771363827,
+      "bmi": 22.0,
+      "cluster_id": 0
+    },
+    {
+      "age_jitter": 5.004740878327002,
+      "bmi": 26.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 3.9031338309168397,
+      "bmi": 32.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 9.974577273800433,
+      "bmi": 25.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 13.094196240930318,
+      "bmi": 25.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 0.9512503538971084,
+      "bmi": 35.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 6.882913816221291,
+      "bmi": 27.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 11.882992770705892,
+      "bmi": 27.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 10.882834181162961,
+      "bmi": 22.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 13.08105204596489,
+      "bmi": 24.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 6.057377910963939,
+      "bmi": 45.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 11.943196147741556,
+      "bmi": 22.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 5.977997525431917,
+      "bmi": 28.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 11.896120000523464,
+      "bmi": 31.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 4.003861072301707,
+      "bmi": 38.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 12.024176140527034,
+      "bmi": 28.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 3.9368948984763192,
+      "bmi": 31.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 11.025730743318578,
+      "bmi": 21.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 9.006850014946188,
+      "bmi": 30.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 11.001090857528945,
+      "bmi": 23.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 8.047548988154873,
+      "bmi": 29.0,
+      "cluster_id": 0
+    },
+    {
+      "age_jitter": 13.035795772032225,
+      "bmi": 25.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 7.994272117061699,
+      "bmi": 30.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 8.051059926502711,
+      "bmi": 27.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 5.931500321476687,
+      "bmi": 23.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 4.085538311357378,
+      "bmi": 33.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 11.894276806124001,
+      "bmi": 29.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 7.03043799586821,
+      "bmi": 20.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 3.9901397861292014,
+      "bmi": 21.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 5.913613297125478,
+      "bmi": 31.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 8.094952371532088,
+      "bmi": 25.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 6.979217978653566,
+      "bmi": 36.0,
+      "cluster_id": 0
+    },
+    {
+      "age_jitter": 1.9285011443949147,
+      "bmi": 21.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 10.966768658873407,
+      "bmi": 25.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 0.9135444186289496,
+      "bmi": 27.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 8.073385447602153,
+      "bmi": 36.0,
+      "cluster_id": 0
+    },
+    {
+      "age_jitter": 10.935379113264132,
+      "bmi": 25.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 7.906566097767108,
+      "bmi": 36.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 2.0967986892713726,
+      "bmi": 25.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 6.932605411954872,
+      "bmi": 25.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 6.890362054013652,
+      "bmi": 34.0,
+      "cluster_id": 0
+    },
+    {
+      "age_jitter": 12.032534484962444,
+      "bmi": 27.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 4.036541825551805,
+      "bmi": 26.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 9.058848922267442,
+      "bmi": 27.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 7.962236071048074,
+      "bmi": 26.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 8.083480848133677,
+      "bmi": 25.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 6.9958174020609505,
+      "bmi": 21.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 11.890715781353826,
+      "bmi": 34.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 6.93886215352557,
+      "bmi": 25.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 9.037227333941944,
+      "bmi": 32.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 10.052635008085797,
+      "bmi": 26.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 12.015122582420727,
+      "bmi": 26.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 3.998635488048308,
+      "bmi": 27.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 13.017956975497627,
+      "bmi": 24.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 5.962224565596067,
+      "bmi": 26.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 9.968625481921832,
+      "bmi": 23.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 2.0201835125390564,
+      "bmi": 23.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 7.9341860465759035,
+      "bmi": 25.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 4.118025874222891,
+      "bmi": 17.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 9.076374564630541,
+      "bmi": 37.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 10.11857866538857,
+      "bmi": 26.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 9.96820283442763,
+      "bmi": 17.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 8.093547071969569,
+      "bmi": 25.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 7.0230502127762495,
+      "bmi": 28.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 6.080971766962817,
+      "bmi": 31.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 7.925026230263608,
+      "bmi": 41.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 12.889695814922119,
+      "bmi": 26.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 1.9285672075508553,
+      "bmi": 22.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 13.118757811269008,
+      "bmi": 22.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 8.039764336665568,
+      "bmi": 38.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 13.102615012241563,
+      "bmi": 21.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 10.883389936034439,
+      "bmi": 28.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 10.04054743815798,
+      "bmi": 36.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 10.938609200183814,
+      "bmi": 28.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 9.990584705257495,
+      "bmi": 26.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 2.0904105913435087,
+      "bmi": 25.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 7.921506544746099,
+      "bmi": 24.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 7.0312028426983355,
+      "bmi": 37.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 7.913983013256506,
+      "bmi": 28.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 8.980416010597647,
+      "bmi": 24.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 8.892091137189253,
+      "bmi": 21.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 8.108286718400922,
+      "bmi": 23.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 9.93858857802054,
+      "bmi": 41.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 9.09002020777298,
+      "bmi": 33.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 3.9316427859108924,
+      "bmi": 25.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 5.0618984764958865,
+      "bmi": 34.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 8.020340648673185,
+      "bmi": 34.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 10.890212436235226,
+      "bmi": 27.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 2.9966508598946096,
+      "bmi": 21.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 8.951047887098406,
+      "bmi": 30.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 3.8854729290471273,
+      "bmi": 33.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 10.920731385223654,
+      "bmi": 22.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 8.982233031555085,
+      "bmi": 29.0,
+      "cluster_id": 0
+    },
+    {
+      "age_jitter": 10.031455706289252,
+      "bmi": 37.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 11.09835141836421,
+      "bmi": 29.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 6.065837139874042,
+      "bmi": 38.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 8.989571357518573,
+      "bmi": 29.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 8.92896315517297,
+      "bmi": 27.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 1.0439317487781892,
+      "bmi": 26.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 3.0439235895477594,
+      "bmi": 27.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 8.017722872485903,
+      "bmi": 26.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 8.066756341410564,
+      "bmi": 30.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 5.105928056304859,
+      "bmi": 24.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 7.995905213473228,
+      "bmi": 36.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 5.095221289181768,
+      "bmi": 30.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 6.955822972439391,
+      "bmi": 27.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 12.114399378771981,
+      "bmi": 37.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 6.059229506723766,
+      "bmi": 42.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 10.037504569438598,
+      "bmi": 21.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 9.94982028115363,
+      "bmi": 30.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 1.0891381808178913,
+      "bmi": 30.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 10.017379155990072,
+      "bmi": 23.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 9.95496799393169,
+      "bmi": 26.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 7.990850535260333,
+      "bmi": 25.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 8.88131354612031,
+      "bmi": 22.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 9.938967938318795,
+      "bmi": 23.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 6.014757454659453,
+      "bmi": 32.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 8.995557921678307,
+      "bmi": 28.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 10.936818769065056,
+      "bmi": 18.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 5.945557569774125,
+      "bmi": 26.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 3.9580822553240025,
+      "bmi": 37.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 7.991962223153203,
+      "bmi": 40.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 9.000579118471425,
+      "bmi": 23.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 5.90526673916499,
+      "bmi": 23.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 9.949852084588157,
+      "bmi": 31.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 7.9508937907303645,
+      "bmi": 24.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 6.928577267080903,
+      "bmi": 23.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 7.9589779688963045,
+      "bmi": 39.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 9.955539908455451,
+      "bmi": 28.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 3.040197581555222,
+      "bmi": 27.0,
+      "cluster_id": 0
+    },
+    {
+      "age_jitter": 4.069658357293465,
+      "bmi": 29.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 7.88518689917128,
+      "bmi": 25.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 13.092569241006007,
+      "bmi": 27.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 2.1173820654799766,
+      "bmi": 24.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 6.966209055344257,
+      "bmi": 21.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 1.9184934377762566,
+      "bmi": 27.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 4.922698997191075,
+      "bmi": 24.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 12.006632726545076,
+      "bmi": 26.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 5.02181971795554,
+      "bmi": 27.0,
+      "cluster_id": 0
+    },
+    {
+      "age_jitter": 11.022630662723317,
+      "bmi": 30.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 3.0128498016215066,
+      "bmi": 42.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 12.026480493309643,
+      "bmi": 29.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 6.047347751036793,
+      "bmi": 27.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 8.918481149986288,
+      "bmi": 27.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 8.895587227010386,
+      "bmi": 27.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 6.905107623233146,
+      "bmi": 26.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 10.0653051739251,
+      "bmi": 28.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 9.955532187391688,
+      "bmi": 28.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 12.102670903241346,
+      "bmi": 29.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 7.063554880146671,
+      "bmi": 26.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 11.050404051213109,
+      "bmi": 25.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 11.012744912578706,
+      "bmi": 33.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 7.9614373149767745,
+      "bmi": 30.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 10.089577584724932,
+      "bmi": 27.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 6.997260170884368,
+      "bmi": 30.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 11.928669708626199,
+      "bmi": 27.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 12.113901699180266,
+      "bmi": 24.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 6.962166983992013,
+      "bmi": 33.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 7.091588133098287,
+      "bmi": 29.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 6.977165191462368,
+      "bmi": 26.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 1.0462651766211992,
+      "bmi": 22.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 8.10465045681175,
+      "bmi": 29.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 11.040848781284325,
+      "bmi": 33.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 9.027536818605189,
+      "bmi": 31.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 8.118340299663322,
+      "bmi": 35.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 11.041136845801528,
+      "bmi": 23.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 3.997745899722849,
+      "bmi": 24.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 10.118911473420074,
+      "bmi": 33.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 10.106411764306685,
+      "bmi": 38.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 10.066189860744903,
+      "bmi": 21.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 2.892811663830522,
+      "bmi": 29.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 11.918474885995742,
+      "bmi": 34.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 11.067024786457953,
+      "bmi": 23.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 8.043819583570214,
+      "bmi": 43.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 8.938751160372036,
+      "bmi": 28.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 6.92991953769003,
+      "bmi": 21.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 10.903539158501824,
+      "bmi": 22.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 12.948993524451621,
+      "bmi": 24.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 13.096937005310915,
+      "bmi": 25.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 10.909858493294365,
+      "bmi": 27.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 12.003632010443086,
+      "bmi": 28.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 10.881801687872,
+      "bmi": 24.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 7.013055765611143,
+      "bmi": 25.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 7.932030594975547,
+      "bmi": 32.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 8.956113334277452,
+      "bmi": 22.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 8.089305032480858,
+      "bmi": 27.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 8.934874944638908,
+      "bmi": 23.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 5.986863711839853,
+      "bmi": 31.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 4.016187547251838,
+      "bmi": 32.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 12.104530066522237,
+      "bmi": 31.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 6.059643472054343,
+      "bmi": 21.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 11.007510261156465,
+      "bmi": 37.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 4.041095539194062,
+      "bmi": 27.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 6.888743246963892,
+      "bmi": 12.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 2.0715433845963998,
+      "bmi": 20.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 8.061329490193623,
+      "bmi": 30.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 12.921109912982269,
+      "bmi": 25.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 9.022845444510102,
+      "bmi": 29.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 1.07899611768298,
+      "bmi": 27.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 7.924937346707682,
+      "bmi": 27.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 9.033974718231445,
+      "bmi": 33.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 1.9909347032344804,
+      "bmi": 29.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 12.966557760268062,
+      "bmi": 40.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 12.92691899857518,
+      "bmi": 37.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 3.046622984554293,
+      "bmi": 27.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 5.987100005078714,
+      "bmi": 21.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 12.062743815164161,
+      "bmi": 23.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 7.013247530158438,
+      "bmi": 23.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 3.980465992189691,
+      "bmi": 27.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 11.007538649841099,
+      "bmi": 30.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 7.10549076178709,
+      "bmi": 21.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 9.94161322276844,
+      "bmi": 26.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 9.027452665568445,
+      "bmi": 27.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 1.004084676843863,
+      "bmi": 31.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 10.080855179118625,
+      "bmi": 30.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 9.998575264878827,
+      "bmi": 53.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 8.970796323413708,
+      "bmi": 20.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 6.912248059195135,
+      "bmi": 32.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 6.018446630039422,
+      "bmi": 23.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 7.9513788701824595,
+      "bmi": 29.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 7.095279231705518,
+      "bmi": 42.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 10.06865543326647,
+      "bmi": 27.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 10.013664093091228,
+      "bmi": 22.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 12.88637866359935,
+      "bmi": 22.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 11.107964331179808,
+      "bmi": 28.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 10.937798733929876,
+      "bmi": 23.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 8.91283710672711,
+      "bmi": 25.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 9.880961825136001,
+      "bmi": 29.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 7.989548526683425,
+      "bmi": 30.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 12.954477681496023,
+      "bmi": 33.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 11.93985301819973,
+      "bmi": 26.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 10.980587436635913,
+      "bmi": 53.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 8.88064974568219,
+      "bmi": 44.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 13.006067959257443,
+      "bmi": 28.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 9.966835026532813,
+      "bmi": 31.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 2.013680427651548,
+      "bmi": 19.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 1.1189332719005862,
+      "bmi": 22.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 4.111484532673408,
+      "bmi": 26.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 12.099671702468534,
+      "bmi": 25.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 6.019786737969451,
+      "bmi": 26.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 11.904797485850038,
+      "bmi": 24.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 10.9050200519072,
+      "bmi": 29.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 8.919838298756886,
+      "bmi": 29.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 3.975335992353478,
+      "bmi": 20.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 2.903234435833193,
+      "bmi": 27.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 9.06690021695179,
+      "bmi": 33.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 7.963726556491135,
+      "bmi": 28.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 13.02888585031793,
+      "bmi": 24.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 8.913846551988003,
+      "bmi": 32.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 9.068795930998464,
+      "bmi": 28.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 11.891751290357586,
+      "bmi": 26.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 4.937929294790399,
+      "bmi": 24.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 4.8859662779327016,
+      "bmi": 27.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 8.07085574205985,
+      "bmi": 43.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 6.038388312271027,
+      "bmi": 27.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 11.012519048793063,
+      "bmi": 30.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 11.028588580742474,
+      "bmi": 28.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 6.106835589040985,
+      "bmi": 24.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 3.9916509931752575,
+      "bmi": 32.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 9.889300319566823,
+      "bmi": 23.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 11.083183571909077,
+      "bmi": 26.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 12.01872413179381,
+      "bmi": 26.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 10.980839085085913,
+      "bmi": 23.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 6.941874018328565,
+      "bmi": 24.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 10.971375766692114,
+      "bmi": 31.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 9.041794632214351,
+      "bmi": 25.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 7.09357576169736,
+      "bmi": 23.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 9.996686098149347,
+      "bmi": 33.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 1.9279461563984137,
+      "bmi": 23.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 1.0345276288193594,
+      "bmi": 33.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 9.910763697563873,
+      "bmi": 25.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 0.8813031601908881,
+      "bmi": 21.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 7.019834643835489,
+      "bmi": 22.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 2.992236588588051,
+      "bmi": 33.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 5.927611911187567,
+      "bmi": 28.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 8.100618939732135,
+      "bmi": 24.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 8.051181967114807,
+      "bmi": 32.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 6.087874705519445,
+      "bmi": 30.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 10.061097553172353,
+      "bmi": 33.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 11.907805613840464,
+      "bmi": 27.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 3.032104745536623,
+      "bmi": 30.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 6.939920890944118,
+      "bmi": 28.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 4.005034151861386,
+      "bmi": 38.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 3.0396513517449892,
+      "bmi": 22.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 9.08710232998916,
+      "bmi": 24.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 7.883523882454417,
+      "bmi": 21.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 11.117227379319663,
+      "bmi": 30.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 9.064470621470251,
+      "bmi": 21.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 12.057795655592589,
+      "bmi": 31.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 5.075853444020679,
+      "bmi": 42.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 9.103097499736133,
+      "bmi": 40.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 9.03023749360778,
+      "bmi": 30.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 7.0255118555662515,
+      "bmi": 55.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 3.9012962783218934,
+      "bmi": 22.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 9.108539931802964,
+      "bmi": 33.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 11.889660897585582,
+      "bmi": 27.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 5.101487447102046,
+      "bmi": 32.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 7.998116771738103,
+      "bmi": 33.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 4.929684929965955,
+      "bmi": 30.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 6.939124538027975,
+      "bmi": 26.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 8.983189691976012,
+      "bmi": 24.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 5.022664079301548,
+      "bmi": 34.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 9.071883025372374,
+      "bmi": 25.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 5.017968570086656,
+      "bmi": 43.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 5.921994680996997,
+      "bmi": 28.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 2.8820681417121006,
+      "bmi": 21.0,
+      "cluster_id": 0
+    },
+    {
+      "age_jitter": 1.9767536489885797,
+      "bmi": 20.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 6.9591484910923604,
+      "bmi": 30.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 4.929852140804369,
+      "bmi": 40.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 9.069807631407183,
+      "bmi": 25.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 10.94556492596021,
+      "bmi": 27.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 2.000762846413973,
+      "bmi": 22.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 10.11664713833839,
+      "bmi": 41.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 11.115206523093006,
+      "bmi": 38.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 9.107045868853943,
+      "bmi": 23.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 6.053698869646041,
+      "bmi": 40.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 8.941229917453832,
+      "bmi": 25.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 9.10467359684123,
+      "bmi": 26.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 5.062241864005373,
+      "bmi": 29.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 8.988138351264212,
+      "bmi": 31.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 2.023560291209786,
+      "bmi": 25.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 6.056777542347776,
+      "bmi": 33.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 8.914492478749327,
+      "bmi": 27.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 6.984910730127952,
+      "bmi": 24.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 8.959376578093169,
+      "bmi": 29.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 5.08079377913757,
+      "bmi": 33.0,
+      "cluster_id": 0
+    },
+    {
+      "age_jitter": 9.028696621514475,
+      "bmi": 21.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 9.929055368099544,
+      "bmi": 22.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 2.981677228932145,
+      "bmi": 35.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 5.079204602998167,
+      "bmi": 22.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 11.079368945299024,
+      "bmi": 28.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 11.063410483899228,
+      "bmi": 22.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 10.0594695335552,
+      "bmi": 37.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 10.060558939464052,
+      "bmi": 25.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 12.081376735411611,
+      "bmi": 25.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 5.025567704097907,
+      "bmi": 22.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 10.084571756303264,
+      "bmi": 39.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 9.11755753660917,
+      "bmi": 35.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 9.897113088204362,
+      "bmi": 42.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 7.0163042153028385,
+      "bmi": 25.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 7.927515379140058,
+      "bmi": 26.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 3.0965975921815003,
+      "bmi": 38.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 13.015454243286204,
+      "bmi": 27.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 8.92204333628544,
+      "bmi": 28.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 2.116807568364447,
+      "bmi": 22.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 8.937308479046084,
+      "bmi": 27.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 9.023485447969488,
+      "bmi": 24.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 11.909722483666409,
+      "bmi": 27.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 3.985893459635334,
+      "bmi": 26.0,
+      "cluster_id": 0
+    },
+    {
+      "age_jitter": 5.973958075087359,
+      "bmi": 20.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 3.9284277065725735,
+      "bmi": 22.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 2.0876240556585555,
+      "bmi": 27.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 10.068343227820526,
+      "bmi": 42.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 5.080527247546662,
+      "bmi": 30.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 5.096624575170522,
+      "bmi": 26.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 12.08857290870648,
+      "bmi": 26.0,
+      "cluster_id": 0
+    },
+    {
+      "age_jitter": 3.8889790134822833,
+      "bmi": 33.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 9.005700707692233,
+      "bmi": 31.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 6.988935251698312,
+      "bmi": 25.0,
+      "cluster_id": 0
+    },
+    {
+      "age_jitter": 10.926710770785181,
+      "bmi": 24.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 6.057544806375876,
+      "bmi": 27.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 8.988251160044461,
+      "bmi": 23.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 8.00196016539509,
+      "bmi": 34.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 9.024374028589444,
+      "bmi": 26.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 5.103550863034133,
+      "bmi": 20.0,
+      "cluster_id": 0
+    },
+    {
+      "age_jitter": 11.080994178509066,
+      "bmi": 28.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 5.9132593323461915,
+      "bmi": 31.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 10.02945009879717,
+      "bmi": 50.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 12.003499932452527,
+      "bmi": 32.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 8.094327444688712,
+      "bmi": 36.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 7.9309465133217785,
+      "bmi": 28.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 4.110043670554108,
+      "bmi": 22.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 3.0231468238464654,
+      "bmi": 24.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 10.914831261119613,
+      "bmi": 32.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 13.106924773845257,
+      "bmi": 25.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 10.114176645853519,
+      "bmi": 31.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 6.038261432326056,
+      "bmi": 27.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 1.9228650021673082,
+      "bmi": 19.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 12.916031093619821,
+      "bmi": 32.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 3.999259983071284,
+      "bmi": 36.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 1.0642017798354155,
+      "bmi": 34.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 4.116549064362882,
+      "bmi": 30.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 9.884280828154477,
+      "bmi": 31.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 10.085054269838439,
+      "bmi": 46.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 9.03475660664623,
+      "bmi": 34.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 8.029150017560466,
+      "bmi": 34.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 4.098059365769826,
+      "bmi": 52.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 9.95859893545901,
+      "bmi": 27.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 3.0075393147833385,
+      "bmi": 38.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 4.929505496817283,
+      "bmi": 25.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 6.887508043096394,
+      "bmi": 35.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 11.115714631116283,
+      "bmi": 29.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 8.077919405709522,
+      "bmi": 22.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 8.02826933804134,
+      "bmi": 44.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 10.044122724240179,
+      "bmi": 30.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 6.923024393957857,
+      "bmi": 33.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 10.005310022296756,
+      "bmi": 31.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 3.9839195716407554,
+      "bmi": 21.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 13.059056314950247,
+      "bmi": 29.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 5.059665924669668,
+      "bmi": 27.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 12.918650963876786,
+      "bmi": 28.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 8.912977903209072,
+      "bmi": 23.0,
+      "cluster_id": 0
+    },
+    {
+      "age_jitter": 6.920247884722667,
+      "bmi": 33.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 7.922325338340272,
+      "bmi": 31.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 7.06733947300638,
+      "bmi": 27.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 9.071404128972762,
+      "bmi": 32.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 4.925022483665478,
+      "bmi": 28.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 8.978107946262888,
+      "bmi": 26.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 10.063541605103836,
+      "bmi": 30.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 1.8855536226996672,
+      "bmi": 48.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 4.107722345681388,
+      "bmi": 32.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 7.915507259193131,
+      "bmi": 24.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 3.9841069665574222,
+      "bmi": 31.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 3.036320399697611,
+      "bmi": 23.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 5.92089396219807,
+      "bmi": 40.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 6.08706349529781,
+      "bmi": 28.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 10.905748893805695,
+      "bmi": 21.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 7.930226563417269,
+      "bmi": 25.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 9.889900727801574,
+      "bmi": 20.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 4.026525281011318,
+      "bmi": 27.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 11.09433259634078,
+      "bmi": 29.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 9.931925366854097,
+      "bmi": 24.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 7.945737480465451,
+      "bmi": 32.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 8.098987711110954,
+      "bmi": 26.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 10.979017176625684,
+      "bmi": 25.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 12.94087948157484,
+      "bmi": 30.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 7.981638894723117,
+      "bmi": 31.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 5.002949370249187,
+      "bmi": 23.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 11.070483716134394,
+      "bmi": 34.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 4.940812004921405,
+      "bmi": 31.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 2.090001186136306,
+      "bmi": 24.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 8.916847571120892,
+      "bmi": 28.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 6.980853394967785,
+      "bmi": 18.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 8.963527541618284,
+      "bmi": 23.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 4.972488675405705,
+      "bmi": 22.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 8.980625373096194,
+      "bmi": 27.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 9.01709116592448,
+      "bmi": 28.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 12.988261638592938,
+      "bmi": 16.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 2.893509315115678,
+      "bmi": 22.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 2.9481723145263636,
+      "bmi": 48.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 3.93959061949247,
+      "bmi": 58.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 7.991603391677425,
+      "bmi": 34.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 8.050377127347513,
+      "bmi": 30.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 0.9631582867151317,
+      "bmi": 33.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 7.004691903546327,
+      "bmi": 29.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 8.963055317497137,
+      "bmi": 26.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 10.93440767645953,
+      "bmi": 27.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 3.9657687096404928,
+      "bmi": 25.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 8.993492923717,
+      "bmi": 23.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 9.034497711701826,
+      "bmi": 28.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 11.899211828075085,
+      "bmi": 21.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 13.119943680859443,
+      "bmi": 30.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 2.9013700812180128,
+      "bmi": 20.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 9.914529263913074,
+      "bmi": 52.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 10.09977876589089,
+      "bmi": 30.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 7.011585596285966,
+      "bmi": 29.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 6.010991588577471,
+      "bmi": 27.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 11.017383323368124,
+      "bmi": 27.0,
+      "cluster_id": 0
+    },
+    {
+      "age_jitter": 10.957331761717505,
+      "bmi": 34.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 6.909239801110847,
+      "bmi": 20.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 9.11629873954359,
+      "bmi": 27.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 1.966711735724644,
+      "bmi": 30.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 12.937231946491778,
+      "bmi": 26.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 9.963441672360617,
+      "bmi": 28.0,
+      "cluster_id": 0
+    },
+    {
+      "age_jitter": 9.956398333030965,
+      "bmi": 27.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 9.918848646550897,
+      "bmi": 27.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 9.952336152812844,
+      "bmi": 27.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 6.016497887028694,
+      "bmi": 22.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 9.961193325904711,
+      "bmi": 24.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 9.883979152455414,
+      "bmi": 41.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 2.0758162917111425,
+      "bmi": 36.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 9.93848018897337,
+      "bmi": 38.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 5.920474771633195,
+      "bmi": 28.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 1.9054153769001807,
+      "bmi": 37.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 7.034156178801169,
+      "bmi": 31.0,
+      "cluster_id": 0
+    },
+    {
+      "age_jitter": 7.932837893876552,
+      "bmi": 21.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 5.112745178919442,
+      "bmi": 25.0,
+      "cluster_id": 0
+    },
+    {
+      "age_jitter": 9.072140068961724,
+      "bmi": 27.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 3.9313821494408128,
+      "bmi": 26.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 8.026454586663979,
+      "bmi": 38.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 9.970352664257527,
+      "bmi": 27.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 2.977957600375443,
+      "bmi": 26.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 7.044294897614482,
+      "bmi": 25.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 7.91327707909602,
+      "bmi": 21.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 10.068117786250172,
+      "bmi": 25.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 4.025422042635455,
+      "bmi": 32.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 9.984812173415767,
+      "bmi": 26.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 11.962892014360678,
+      "bmi": 30.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 13.02054490275174,
+      "bmi": 23.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 8.89095894850481,
+      "bmi": 26.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 9.013410577170182,
+      "bmi": 29.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 7.022122898441361,
+      "bmi": 27.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 6.080687940229866,
+      "bmi": 19.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 10.017268150153889,
+      "bmi": 26.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 9.943489554676315,
+      "bmi": 37.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 10.066562350607002,
+      "bmi": 24.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 8.931631492338786,
+      "bmi": 24.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 7.932991501090144,
+      "bmi": 27.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 13.113072436432558,
+      "bmi": 31.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 13.002144196420325,
+      "bmi": 25.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 2.001382955538258,
+      "bmi": 37.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 4.070321194950312,
+      "bmi": 28.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 6.928507432037552,
+      "bmi": 20.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 1.1154411547249055,
+      "bmi": 25.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 8.9173818410339,
+      "bmi": 36.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 4.0842715904373295,
+      "bmi": 37.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 7.041484814724375,
+      "bmi": 20.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 5.982019624203391,
+      "bmi": 34.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 8.961365670220758,
+      "bmi": 47.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 7.969210702359089,
+      "bmi": 24.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 4.97848192613577,
+      "bmi": 27.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 6.097704869317492,
+      "bmi": 30.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 6.054184712331704,
+      "bmi": 27.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 10.911621159894096,
+      "bmi": 24.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 6.048728031767734,
+      "bmi": 26.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 5.052851846960639,
+      "bmi": 45.0,
+      "cluster_id": 0
+    },
+    {
+      "age_jitter": 11.093604669708247,
+      "bmi": 39.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 8.955499576568602,
+      "bmi": 20.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 6.9379104284054876,
+      "bmi": 30.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 11.01355666172259,
+      "bmi": 30.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 10.084271463942864,
+      "bmi": 23.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 4.998593995164182,
+      "bmi": 25.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 3.950462501864004,
+      "bmi": 23.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 9.936361639182216,
+      "bmi": 30.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 2.887105749390867,
+      "bmi": 29.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 5.916867095774553,
+      "bmi": 32.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 8.992561218963042,
+      "bmi": 45.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 9.917509917270634,
+      "bmi": 19.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 5.982760767242129,
+      "bmi": 29.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 5.084667471111659,
+      "bmi": 24.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 9.94780825630881,
+      "bmi": 27.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 4.075617543092501,
+      "bmi": 29.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 5.972721949733564,
+      "bmi": 24.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 4.945792254485266,
+      "bmi": 30.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 7.101928400132773,
+      "bmi": 31.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 9.984877429194748,
+      "bmi": 27.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 9.990330271468862,
+      "bmi": 26.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 9.933395740510898,
+      "bmi": 30.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 12.021193499618162,
+      "bmi": 23.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 9.050738243450338,
+      "bmi": 22.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 9.103896187779181,
+      "bmi": 19.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 10.003977881162323,
+      "bmi": 22.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 11.995345831426153,
+      "bmi": 25.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 12.058845150798923,
+      "bmi": 24.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 7.025527081651728,
+      "bmi": 32.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 9.009465062079453,
+      "bmi": 20.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 9.056038777095079,
+      "bmi": 49.0,
+      "cluster_id": 1
+    },
+    {
+      "age_jitter": 4.938007903515471,
+      "bmi": 30.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 7.079149538351779,
+      "bmi": 20.0,
+      "cluster_id": 2
+    },
+    {
+      "age_jitter": 12.907487217648633,
+      "bmi": 25.0,
+      "cluster_id": 2
+    }
+  ],
+  "runtime_versions": {
+    "python": "3.13.5",
+    "scikit_learn": "1.8.0",
+    "numpy": "2.3.5",
+    "pandas": "2.2.3"
+  }
+}
