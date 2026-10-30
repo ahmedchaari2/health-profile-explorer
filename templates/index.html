@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Exploration descriptive des profils de santé et de mode de vie issus d’un clustering non supervisé du jeu CDC Diabetes Health Indicators.">
+  <title>{% if page == 'groups' %}Comprendre les groupes{% elif page == 'method' %}Méthodologie{% else %}Explorer un profil{% endif %} · CDC Health Profile Explorer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  {% if groups %}<script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>{% endif %}
+</head>
+<body>
+  <div class="ambient ambient-a"></div><div class="ambient ambient-b"></div>
+  <header class="topbar">
+    <a class="brand" href="{{ url_for('index') }}" aria-label="CDC Health Profile Explorer, accueil">
+      <span class="brand-mark"><span></span><span></span><span></span></span>
+      <span><strong>CDC Health</strong><small>PROFILE EXPLORER</small></span>
+    </a>
+    <nav class="nav-links" aria-label="Navigation principale">
+      <a href="{{ url_for('groups') }}" {% if page == 'groups' %}aria-current="page"{% endif %}>Comprendre les groupes</a>
+      <a href="{{ url_for('index') }}" {% if page == 'form' %}aria-current="page"{% endif %}>Explorer un profil</a>
+      <a href="{{ url_for('methodology') }}" {% if page == 'method' %}aria-current="page"{% endif %}>Méthodologie</a>
+    </nav>
+    <span class="model-pill"><span class="status-dot {% if ready %}online{% else %}offline{% endif %}"></span>{{ model_name }}</span>
+  </header>
+
+  <main id="top" class="shell">
+    {% if not ready %}
+    <section class="setup-alert" role="status">
+      <div class="setup-icon">⌁</div><div><h2>Artefacts du modèle indisponibles</h2>
+      <p>Le modèle sauvegardé et/ou le fichier de statistiques du notebook est absent ou invalide. Exécutez le notebook, puis placez les deux fichiers générés à la racine de l’application.</p>
+      <code>model_cdc_diabetes.joblib</code> <code>cluster_dashboard_data.json</code>
+      {% if ready_error %}<details><summary>Détails du contrôle de chargement</summary><p>{{ ready_error }}</p></details>{% endif %}</div>
+    </section>
+    {% endif %}
+
+    {% if page == 'form' %}
+    <section class="hero">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="eyebrow-line"></span> CLUSTERING NON SUPERVISÉ · CDC DIABETES</div>
+        <h1>Explorer les profils<br><span>de santé et de mode de vie.</span></h1>
+        <p>Une interface interactive pour comprendre les groupes identifiés par le modèle retenu, comparer leurs caractéristiques et explorer l’affectation d’une nouvelle observation.</p>
+        <div class="hero-actions"><a class="button button-primary" href="#explorer">Explorer un profil <span>↗</span></a><a class="text-link" href="{{ url_for('groups') }}">Consulter les groupes <span>→</span></a></div>
+        <div class="hero-footnote"><span class="mini-shield">✓</span> Description statistique · Pas de diagnostic médical</div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+        <div class="orbit-center"><div class="orbit-core">CDC</div></div>
+        <div class="orb orb-one"><span>01</span></div><div class="orb orb-two"><span>02</span></div><div class="orb orb-three"><span>03</span></div>
+        <div class="floating-tag tag-top"><span class="tag-dot dot-cyan"></span> Profils observés</div>
+        <div class="floating-tag tag-bottom"><span class="tag-dot dot-violet"></span> {{ sample_size }} individus</div>
+      </div>
+    </section>
+
+    {% if prediction %}
+    <section class="prediction-result" id="prediction-result">
+      <div class="result-symbol">◎</div>
+      <div class="result-main">
+        <div class="eyebrow">RÉSULTAT DE L’AFFECTATION</div>
+        <h2>{{ prediction.title }}</h2>
+        <p>Groupe dont le centroïde est le plus proche du profil saisi. Ce n’est ni une probabilité ni un diagnostic médical.</p>
+        {% if prediction.description %}<p>{{ prediction.description }}</p>{% endif %}
+        {% if prediction.note %}<div class="result-flag"><span class="alert-mark">!</span><p>{{ prediction.note }}</p></div>{% endif %}
+        <div class="confidence confidence-{{ prediction.confidence }}">
+          <strong>Proximité avec le groupe : {{ prediction.confidence_label }}</strong>
+          <span>Deuxième groupe le plus proche : {{ prediction.runner_up_title }}. Écart de distance : {{ '%.0f'|format(prediction.margin_pct) }} %{% if prediction.confidence == 'low' %} — presque une égalité, lisez le résultat avec prudence{% endif %}.</span>
+        </div>
+        {% if prediction.imputed %}
+        <div class="imputed-note"><strong>{{ prediction.imputed|length }} variable{{ 's' if prediction.imputed|length > 1 }} non renseignée{{ 's' if prediction.imputed|length > 1 }}</strong>
+          <span>Remplacée{{ 's' if prediction.imputed|length > 1 }} par la valeur la plus fréquente à l’entraînement, ce qui rapproche le résultat du groupe majoritaire : {{ prediction.imputed_labels|join(', ') }}.</span></div>
+        {% endif %}
+        <div class="distance-line"><span>Distance au centroïde le plus proche (espace standardisé)</span><strong>{{ '%.2f'|format(prediction.distance) }}</strong><span>contre {{ '%.2f'|format(prediction.runner_up_distance) }} pour le suivant</span></div>
+      </div>
+      <div class="result-meta">
+        <span>Effectif observé</span><strong>{{ prediction.count }} individus</strong>
+        <span>Part de l’échantillon</span><strong>{{ '%.1f'|format(prediction.percentage) }} %</strong>
+        {% if prediction.diabetes_pct is not none %}<span>Diabète (classe 2) dans ce groupe, descriptif</span><strong>{{ '%.1f'|format(prediction.diabetes_pct) }} %</strong>{% endif %}
+        {% if prediction.small_group %}<small>Petit groupe : pourcentages peu stables.</small>{% endif %}
+      </div>
+      {% if prediction.highlights %}
+      <div class="result-highlights"><div class="highlights-heading"><h3>Caractéristiques moyennes observées dans ce groupe</h3><span>Groupe comparé à l’échantillon</span></div>
+        <div class="highlight-grid">{% for item in prediction.highlights %}<article class="highlight-card"><span>{{ item.label }}</span><strong>{{ item.value }}</strong><small>Échantillon : {{ item.overall }}</small><em>{{ item.note }}</em></article>{% endfor %}</div></div>
+      {% endif %}
+    </section>
+    {% endif %}
+
+    {% if error_message %}<div class="error-alert" role="alert"><strong>Vérification du formulaire</strong><span>{{ error_message }}</span></div>{% endif %}
+
+    <section id="explorer" class="section-block explorer-section">
+      <div class="section-heading"><div><div class="eyebrow">EXPLORATEUR DE PROFIL</div><h2>Explorer une nouvelle observation.</h2><p>Renseignez les variables du jeu de données pour obtenir une affectation par le modèle retenu.</p></div><div class="private-tag"><span>✳</span> Rien n’est enregistré</div></div>
+      <div class="explorer-layout">
+        <form method="post" action="{{ url_for('index') }}#prediction-result" class="profile-form" id="profile-form">
+          <div class="form-intro"><div class="form-step">01</div><div><h3>Caractéristiques du profil</h3><p>Renseignez au moins {{ min_provided }} variables. Les champs vides sont remplacés par la valeur la plus fréquente à l’entraînement : plus il y en a, plus le résultat se rapproche du groupe majoritaire.</p></div></div>
+          {% for group in form_groups %}
+          <fieldset class="field-group"><legend>{{ group.title }}</legend><p class="group-description">{{ group.description }}</p><div class="fields-grid">
+            {% for field in group.fields %}
+            <label class="field"><span class="field-label">{{ field.label }}</span>
+              {% if field.kind == 'select' %}
+              <select name="{{ field.key }}">
+                <option value="" {% if not form_values.get(field.key) %}selected{% endif %}>Non renseigné</option>
+                {% for option in field.options %}<option value="{{ option.value }}" {% if form_values.get(field.key, '') == option.value %}selected{% endif %}>{{ option.label }}</option>{% endfor %}
+              </select>
+              {% else %}
+              <input type="number" name="{{ field.key }}" min="{{ field.min }}" max="{{ field.max }}" step="{{ field.step }}" placeholder="{{ field.placeholder }}" value="{{ form_values.get(field.key, '') }}" inputmode="decimal">
+              {% endif %}
+              <small>{{ field.help }}</small>
+            </label>
+            {% endfor %}
+          </div></fieldset>
+          {% endfor %}
+          <p class="field-counter" id="field-counter" aria-live="polite"></p>
+          <button type="submit" id="submit-button" class="button button-primary submit-button" {% if not ready %}disabled{% endif %}><span>Calculer l’affectation</span><span class="button-arrow">↗</span></button>
+          <p class="form-privacy">Les valeurs saisies servent uniquement à produire cette affectation. Le résultat est descriptif et ne remplace pas un avis médical.</p>
+        </form>
+        <aside class="explorer-aside">
+          <div class="aside-card aside-sticky"><div class="aside-icon">◎</div><span class="panel-kicker">COMMENT LIRE LE RÉSULTAT</span><h3>Une appartenance statistique, pas une certitude clinique.</h3><p>Le groupe résume des caractéristiques communes observées dans l’échantillon. Il n’indique pas qu’une personne développera le diabète et ne constitue pas un diagnostic.</p><div class="aside-divider"></div>
+            <div class="mini-step"><span>1</span><div><strong>Prétraitement identique</strong><small>Imputation mémorisée et scaler ajusté à l’entraînement.</small></div></div>
+            <div class="mini-step"><span>2</span><div><strong>Centroïde le plus proche</strong><small>{{ model_name }} est chargé, sans réentraînement.</small></div></div>
+            <div class="mini-step"><span>3</span><div><strong>Indice de proximité</strong><small>L’écart avec le deuxième groupe signale les résultats proches d’une égalité.</small></div></div></div>
+          <div class="aside-note"><strong>À propos des données</strong><p>CDC Diabetes Health Indicators, UCI ID 891. Les codes ordinaux (âge, éducation, revenu, santé générale) sont traités comme des catégories codées.</p></div>
+        </aside>
+      </div>
+    </section>
+
+    {% elif page == 'groups' %}
+    <section id="overview" class="section-block page-head">
+      <div class="section-heading"><div><div class="eyebrow">VUE D’ENSEMBLE</div><h1 class="page-title">Comprendre les groupes.</h1><p>Résumé calculé à partir de l’échantillon et du modèle sélectionné dans le notebook.</p></div><div class="source-tag"><span class="source-icon">↳</span><span><strong>Source</strong><small>CDC Diabetes Health Indicators · UCI 891</small></span></div></div>
+      <div class="metric-grid">
+        <article class="metric-card"><div class="metric-top"><span>Individus analysés</span><span class="metric-icon icon-blue">◉</span></div><strong>{{ sample_size }}</strong><small>Échantillon aléatoire du clustering</small><div class="metric-foot"><span class="foot-line line-blue"></span><span>RANDOM_STATE = 42</span></div></article>
+        <article class="metric-card"><div class="metric-top"><span>Groupes identifiés</span><span class="metric-icon icon-teal">◌</span></div><strong>{{ metrics.get('n_clusters', '—') }}</strong><small>Choisis par la meilleure silhouette pour k = 2 à 6</small><div class="metric-foot"><span class="foot-line line-teal"></span><span>Modèle : {{ model_name }}</span></div></article>
+        <article class="metric-card"><div class="metric-top"><span>Silhouette</span><span class="metric-icon icon-violet">⌁</span></div><strong>{{ '%.3f'|format(metrics.silhouette) if metrics.silhouette is not none else '—' }}</strong><small>Sous 0,25 environ : groupes qui se chevauchent beaucoup</small><div class="metric-foot"><span class="foot-line line-violet"></span><span>Structure faible, exploratoire</span></div></article>
+        <article class="metric-card"><div class="metric-top"><span>Plus grand groupe</span><span class="metric-icon icon-amber">◌</span></div><strong>{{ '%.1f'|format(metrics.largest_cluster_pct) if metrics.largest_cluster_pct is not none else '—' }}<i>%</i></strong><small>Part de l’échantillon dans le groupe le plus nombreux</small><div class="metric-foot"><span class="foot-line line-amber"></span><span>Répartition déséquilibrée</span></div></article>
+      </div>
+      {% for note in cluster_notes %}
+      <div class="imbalance-alert"><span class="alert-mark">!</span><p><strong>{{ note.title }}.</strong> {{ note.text }}</p></div>
+      {% endfor %}
+
+      <div class="chart-grid overview-charts">
+        <article class="panel chart-panel panel-wide"><div class="panel-heading"><div><span class="panel-kicker">DISTRIBUTION</span><h3>Répartition des groupes</h3><p>Pourcentage de l’échantillon par groupe.</p></div><span class="chart-badge">{{ model_name }}</span></div><div id="size-chart" class="chart-area" role="img" aria-label="Répartition des groupes en pourcentage de l’échantillon"></div></article>
+        <article class="panel chart-panel"><div class="panel-heading"><div><span class="panel-kicker">LECTURE DU MODÈLE</span><h3>Indicateurs internes</h3><p>Mesures complémentaires de qualité du clustering.</p></div></div>
+          <div class="metric-list"><div><span>Calinski–Harabasz (plus élevé = mieux)</span><strong>{{ '%.2f'|format(metrics.calinski_harabasz) if metrics.calinski_harabasz is not none else '—' }}</strong></div><div><span>Davies–Bouldin (plus faible = mieux)</span><strong>{{ '%.3f'|format(metrics.davies_bouldin) if metrics.davies_bouldin is not none else '—' }}</strong></div><div><span>Variables d’apprentissage</span><strong>{{ feature_count }}</strong></div></div>
+          <div class="metric-note">Ces métriques évaluent la structure des groupes ; elles ne mesurent pas la qualité d’un diagnostic.</div></article>
+      </div>
+
+      <div class="panel chart-panel"><div class="panel-heading"><div><span class="panel-kicker">PROFILS COMPARÉS</span><h3>Quelles caractéristiques distinguent les groupes ?</h3><p>Les {{ feature_count }} variables du modèle, de la plus discriminante à la moins discriminante. La couleur indique l’écart à la moyenne de l’échantillon, en écarts-types ; l’infobulle donne la moyenne du groupe.</p></div></div><div id="profile-chart" class="profile-chart" role="img" aria-label="Carte thermique des écarts à la moyenne, par groupe et par variable"></div></div>
+    </section>
+
+    {% else %}
+    <section id="method" class="section-block page-head">
+      <div class="section-heading"><div><div class="eyebrow">MÉTHODOLOGIE</div><h1 class="page-title">Comprendre le périmètre du modèle.</h1><p>Les informations ci-dessous sont liées au pipeline enregistré par le notebook.</p></div></div>
+      <div class="method-grid">
+        <article class="method-card"><div class="method-number">01</div><h3>Jeu de données</h3><p>CDC Diabetes Health Indicators — UCI Machine Learning Repository, ID 891.</p><div class="method-detail"><span>Échantillon</span><strong>{{ sample_size }} individus</strong></div><div class="method-detail"><span>Variables de clustering</span><strong>{{ feature_count }} variables</strong></div></article>
+        <article class="method-card"><div class="method-number">02</div><h3>Prétraitement</h3><p>Conversion numérique, remplacement des manquants par la médiane (IMC) ou le mode (autres variables) puis standardisation par le scaler ajusté à l’entraînement.</p><div class="method-detail"><span>État aléatoire</span><strong>42</strong></div><div class="method-detail"><span>Réentraînement en ligne</span><strong>Non</strong></div></article>
+        <article class="method-card"><div class="method-number">03</div><h3>Règle d’affectation</h3><p>K-Means affecte la nouvelle observation au centroïde le plus proche. L’écart avec le deuxième centroïde sert d’indice de proximité.</p><div class="method-detail"><span>Modèle chargé</span><strong>{{ model_name }}</strong></div><div class="method-detail"><span>Versions</span><strong>scikit-learn {{ versions.get('scikit_learn', '—') }}</strong></div></article>
+      </div>
+      <div class="limitations-panel"><div class="limitations-icon">!</div><div><h3>Limites d’interprétation</h3><ul>
+        <li>Le clustering porte sur un échantillon de {{ sample_size }} personnes tirées au hasard ; les groupes dépendent de cet échantillon et des paramètres retenus. La silhouette ({{ '%.2f'|format(metrics.silhouette) if metrics.silhouette is not none else '—' }}) indique des groupes qui se chevauchent beaucoup.</li>
+        <li>Un des trois groupes est défini presque uniquement par l’absence de contrôle du cholestérol, une variable rare : ce n’est pas un profil de santé au sens habituel.</li>
+        <li>Une variable non renseignée est remplacée par la valeur la plus fréquente à l’entraînement ; avec peu de variables saisies, le résultat tend vers le groupe majoritaire.</li>
+        <li>La distance euclidienne appliquée à des variables binaires et ordinales a des limites ; Gower ou K-Prototypes pourraient être étudiés.</li>
+        <li>Le sexe, le revenu et l’éducation figurent parmi les variables d’entrée : les groupes reflètent aussi des inégalités sociales, pas seulement la santé.</li>
+        <li>Les données CDC sont anciennes et les groupes ne démontrent aucune causalité.</li>
+      </ul></div></div>
+    </section>
+    {% endif %}
+
+    <footer class="footer"><a class="brand footer-brand" href="{{ url_for('index') }}"><span class="brand-mark"><span></span><span></span><span></span></span><span><strong>CDC Health</strong><small>PROFILE EXPLORER</small></span></a><p>Projet pédagogique de data science · Clustering non supervisé</p><a href="#top" class="back-top">Retour en haut ↑</a></footer>
+  </main>
+
+  {% if page == 'form' %}
+  <script>
+    (() => {
+      const form = document.getElementById('profile-form');
+      const fields = [...form.querySelectorAll('select, input[type=number]')];
+      const counter = document.getElementById('field-counter');
+      const submit = document.getElementById('submit-button');
+      const ready = {{ 'true' if ready else 'false' }}, minimum = {{ min_provided }};
+      const update = () => {
+        const n = fields.filter(f => f.value.trim() !== '').length;
+        counter.textContent = n >= minimum
+          ? `${n} / ${fields.length} variables renseignées`
+          : `${n} / ${fields.length} variables renseignées — encore ${minimum - n} à renseigner au minimum`;
+        counter.classList.toggle('ok', n >= minimum);
+        submit.disabled = !ready || n < minimum;
+      };
+      form.addEventListener('input', update);
+      update();
+    })();
+  </script>
+  {% endif %}
+
+  {% if groups %}
+  <script>
+    const groups = {{ groups|tojson }};
+    const palette = ['#42d6ce', '#6c8cff', '#b18cff', '#f7b955'];
+    const base = {paper_bgcolor: 'rgba(0,0,0,0)', plot_bgcolor: 'rgba(0,0,0,0)', font: {family: 'DM Sans, sans-serif', color: '#a8bad3', size: 12},
+      xaxis: {gridcolor: 'rgba(164,187,215,.10)', zerolinecolor: 'rgba(164,187,215,.12)'}, yaxis: {gridcolor: 'rgba(164,187,215,.10)', zerolinecolor: 'rgba(164,187,215,.12)'}};
+    const config = {responsive: true, displaylogo: false};
+    const wrap = t => t.replace(' · ', '<br>');
+    if (window.Plotly) {
+      const top = Math.max(...groups.sizes.map(s => s.percentage));
+      Plotly.newPlot('size-chart', [{type: 'bar', x: groups.sizes.map(s => wrap(s.title)), y: groups.sizes.map(s => s.percentage),
+        marker: {color: groups.sizes.map((s, i) => palette[i % palette.length])}, text: groups.sizes.map(s => `${s.percentage.toFixed(1)} % (${s.count})`),
+        textposition: 'outside', cliponaxis: false, hovertemplate: '%{x}<br>%{y:.2f} % de l’échantillon<extra></extra>'}],
+        {...base, margin: {l: 56, r: 16, t: 24, b: 70}, bargap: .42, showlegend: false,
+         yaxis: {...base.yaxis, title: 'Part de l’échantillon (%)', range: [0, top * 1.18]}, xaxis: {...base.xaxis, automargin: true}}, config);
+
+      const h = groups.heatmap;
+      Plotly.newPlot('profile-chart', [{type: 'heatmap', x: h.x.map(wrap), y: h.y, z: h.z, text: h.text, zmid: 0, zmin: -2, zmax: 2,
+        colorscale: [[0, '#667ce7'], [.5, '#111f34'], [1, '#42d6ce']],
+        colorbar: {title: {text: 'Écart (écarts-types)', font: {color: '#a8bad3'}}, tickfont: {color: '#a8bad3'}},
+        hovertemplate: '%{y}<br>%{x}<br>Moyenne du groupe : %{text}<br>Écart : %{z:.2f}<extra></extra>'}],
+        {...base, height: 760, margin: {l: 230, r: 40, t: 16, b: 70}, yaxis: {...base.yaxis, autorange: 'reversed', automargin: true},
+         xaxis: {...base.xaxis, automargin: true}}, config);
+    }
+  </script>
+  {% endif %}
+</body>
+</html>
